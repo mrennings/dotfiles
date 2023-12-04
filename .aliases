@@ -1,0 +1,48 @@
+if [ -x /usr/bin/exa ] ;
+then
+    alias ls='exa -ghH@ --git --icons '
+    alias la='ls -a'
+    alias ll='ls -l'
+    alias lla='ls -la'
+    alias l.='ls -d .[a-zA-z0-9]*'
+elif [ -x /usr/bin/lsd ] ; 
+then
+    # lsd (ls deluxe)
+    alias ls=lsd
+    alias la='lsd -a'
+    alias ll='lsd -l'
+    alias lla='lsd -la'
+    alias l.='lsd -d .[a-zA-z0-9]*'
+else
+    alias ls="ls --color=auto -hF"
+    alias la="ls --color=auto -a"
+    alias ll="ls --color=auto -hFl"
+    alias lla="ls --color=auto -ahFl"
+    # Zeigt nur Verzeichnisse an
+    alias lsd="ls --color -d */"
+    # Zeigt nur versteckte Files an
+    alias l.="ls -d .[a-zA-Z0-9]* --color=auto"
+fi
+
+alias md="mkdir"
+alias rd="rmdir"
+alias grep="grep --color=auto"
+#Zeigt den benutzten Plattenplatz und die 10 größten "Verbraucher" an
+alias ducks='echo -e "Ausgabe in KB"; du -cks * | sort -rn | head -n 11'
+#vi als less (inkl. Syntax-highlighting)
+alias vless="/usr/share/vim/vim*/macros/less.sh"
+# fake user-agent of wget
+alias wget-ua='wget --user-agent="Mozilla/4.0 (compatible; DAU 9.0; Wixdows NT 5.5; DT)"'
+
+# Screen/Unicode
+alias screen="screen -U"
+
+alias bat=batcat
+
+# vim
+alias vim=nvim
+alias vi=nvim
+
+
+# vim: set ft=zsh :Last Line
+
